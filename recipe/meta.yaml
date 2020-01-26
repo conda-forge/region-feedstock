@@ -1,5 +1,5 @@
 {% set name = "region" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6beb23e10eb00efd47a84d2cb9c3823512675cf29dfffb476fe7d18ab3df58cc
+  sha256: eef456ce1664f018457634337249011c99c65814d8b7f4e5dd56f5c9487e4145
 
 build:
   noarch: python
