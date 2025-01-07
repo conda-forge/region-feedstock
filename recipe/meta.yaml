@@ -7,20 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: eef456ce1664f018457634337249011c99c65814d8b7f4e5dd56f5c9487e4145
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - geopandas
     - libpysal
     - networkx >=2.0.0
@@ -30,6 +30,8 @@ requirements:
     - scikit-learn
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - region
 
